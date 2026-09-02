@@ -2,11 +2,9 @@ import { Link } from "@tanstack/react-router";
 import { cn } from "../lib/utils";
 
 const styles = {
-  primary:
-    "bg-primary text-primary-foreground hover:brightness-105 shadow-soft",
+  primary: "bg-primary text-primary-foreground hover:brightness-105 shadow-soft",
   dark: "bg-ink text-ink-foreground hover:bg-ink/90",
-  outline:
-    "border border-border bg-transparent text-foreground hover:bg-secondary",
+  outline: "border border-border bg-transparent text-foreground hover:bg-secondary",
   ghostLight:
     "border border-ink-foreground/25 bg-ink-foreground/5 text-ink-foreground hover:bg-ink-foreground/15",
 };

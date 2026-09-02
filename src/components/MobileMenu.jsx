@@ -18,7 +18,10 @@ export function MobileMenu({ onNavigate }) {
       transition={{ duration: 0.22, ease: "easeOut" }}
       className="overflow-hidden border-t border-border bg-background lg:hidden"
     >
-      <nav className="container-x max-h-[calc(100vh-5rem)] overflow-y-auto py-5" aria-label="Mobile">
+      <nav
+        className="container-x max-h-[calc(100vh-5rem)] overflow-y-auto py-5"
+        aria-label="Mobile"
+      >
         <ul className="space-y-1">
           {mainNav.map((item) => (
             <li key={item.to}>

@@ -13,7 +13,11 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-background">
       <div className="container-x grid items-center gap-12 py-14 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:py-24">
-        <motion.div initial="hidden" animate="show" variants={{ show: { transition: { staggerChildren: 0.09 } } }}>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={{ show: { transition: { staggerChildren: 0.09 } } }}
+        >
           <motion.p variants={item} className="eyebrow">
             {siteConfig.serviceArea}
           </motion.p>
@@ -25,7 +29,10 @@ export function Hero() {
             <span className="text-muted-foreground/40">|</span>{" "}
             <span className="text-primary">High-End Appliance</span> Services
           </motion.h1>
-          <motion.p variants={item} className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <motion.p
+            variants={item}
+            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+          >
             Professional heating, cooling, refrigeration and luxury appliance service backed by{" "}
             {siteConfig.yearsExperience}+ years in the field. Precise diagnostics, honest
             recommendations and workmanship that holds up — season after season.
@@ -38,7 +45,10 @@ export function Hero() {
               <Phone className="h-4 w-4" aria-hidden="true" /> Call {siteConfig.phone}
             </Button>
           </motion.div>
-          <motion.ul variants={item} className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-sm font-medium">
+          <motion.ul
+            variants={item}
+            className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-sm font-medium"
+          >
             <li className="flex items-center gap-2">
               <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" /> Licensed & insured
             </li>

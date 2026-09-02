@@ -3,7 +3,15 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { fadeUp } from "./Reveal";
 
-export function ServiceCard({ title, description, image, items = [], to, params, cta = "Explore Services" }) {
+export function ServiceCard({
+  title,
+  description,
+  image,
+  items = [],
+  to,
+  params,
+  cta = "Explore Services",
+}) {
   return (
     <motion.article
       variants={fadeUp}
@@ -42,7 +50,10 @@ export function ServiceCard({ title, description, image, items = [], to, params,
           className="mt-6 inline-flex items-center gap-2 self-start text-sm font-bold text-primary"
         >
           {cta}
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          <ArrowRight
+            className="h-4 w-4 transition-transform group-hover:translate-x-1"
+            aria-hidden="true"
+          />
         </Link>
       </div>
     </motion.article>

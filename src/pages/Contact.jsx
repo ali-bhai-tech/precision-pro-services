@@ -49,7 +49,10 @@ export function Contact() {
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-accent-foreground/80">
               No heat, no cooling or refrigeration failure? Call{" "}
-              <a href={siteConfig.phoneHref} className="font-bold text-primary underline-offset-4 hover:underline">
+              <a
+                href={siteConfig.phoneHref}
+                className="font-bold text-primary underline-offset-4 hover:underline"
+              >
                 {siteConfig.phone}
               </a>{" "}
               any time, day or night.

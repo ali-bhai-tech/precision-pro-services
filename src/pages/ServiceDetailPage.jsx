@@ -34,17 +34,28 @@ export function ServiceDetailPage({ categorySlug, slug }) {
       <section className="container-x py-20 lg:py-28">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
-            <SectionHeading eyebrow="Service Overview" title="What this service covers" text={service.description} />
+            <SectionHeading
+              eyebrow="Service Overview"
+              title="What this service covers"
+              text={service.description}
+            />
 
             <div className="mt-12 grid gap-8 sm:grid-cols-2">
               <Reveal>
                 <h3 className="flex items-center gap-2 font-display text-lg font-bold">
-                  <AlertTriangle className="h-4.5 w-4.5 text-primary" aria-hidden="true" /> Common Problems
+                  <AlertTriangle className="h-4.5 w-4.5 text-primary" aria-hidden="true" /> Common
+                  Problems
                 </h3>
                 <ul className="mt-4 space-y-3">
                   {service.commonProblems.map((p) => (
-                    <li key={p} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <li
+                      key={p}
+                      className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
+                    >
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                        aria-hidden="true"
+                      />
                       {p}
                     </li>
                   ))}
@@ -57,7 +68,10 @@ export function ServiceDetailPage({ categorySlug, slug }) {
                 </h3>
                 <ul className="mt-4 space-y-3">
                   {service.solutions.map((s) => (
-                    <li key={s} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                    <li
+                      key={s}
+                      className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
+                    >
                       <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                       {s}
                     </li>
@@ -144,7 +158,10 @@ export function ServiceDetailPage({ categorySlug, slug }) {
       {related.length ? (
         <section className="bg-surface py-20 lg:py-24">
           <div className="container-x">
-            <SectionHeading eyebrow="Related Services" title={`Other ${category.title.toLowerCase()} services`} />
+            <SectionHeading
+              eyebrow="Related Services"
+              title={`Other ${category.title.toLowerCase()} services`}
+            />
             <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((s) => (
                 <ServiceCard

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitContactRequest } from "../lib/supabase";
 import { services } from "../data/services";
+import { contactRequestSchema } from "../lib/validation/contact";
 import Button from "./Button";
 
 const empty = {
@@ -21,24 +22,47 @@ const labelCls = "block text-xs font-bold uppercase tracking-[0.1em] text-muted-
 export function ContactForm() {
   const [values, setValues] = useState(empty);
   const [status, setStatus] = useState("idle");
+  const [fieldErrors, setFieldErrors] = useState({});
 
   const set = (key) => (e) => setValues((v) => ({ ...v, [key]: e.target.value }));
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    if (status === "loading") return;
+
+    const validation = contactRequestSchema.safeParse(values);
+    if (!validation.success) {
+      const errors = validation.error.flatten().fieldErrors;
+      setFieldErrors(errors);
+      setStatus("error");
+      const firstInvalidField = Object.keys(errors)[0];
+      requestAnimationFrame(() => document.getElementById(firstInvalidField)?.focus());
+      return;
+    }
+
+    setFieldErrors({});
     setStatus("loading");
-    const res = await submitContactRequest(values);
-    if (res.ok) {
+    try {
+      const res = await submitContactRequest(validation.data);
+      if (!res?.ok) throw new Error("Contact request failed");
       setStatus("success");
       setValues(empty);
-    } else {
+    } catch {
       setStatus("error");
+    } finally {
+      setStatus((current) => (current === "loading" ? "error" : current));
     }
   };
 
+  const errorFor = (key) => fieldErrors[key]?.[0];
+
   if (status === "success") {
     return (
-      <div className="rounded-xl border border-border bg-card p-10 text-center shadow-soft">
+      <div
+        className="rounded-xl border border-border bg-card p-10 text-center shadow-soft"
+        role="status"
+        aria-live="polite"
+      >
         <CheckCircle2 className="mx-auto h-10 w-10 text-primary" aria-hidden="true" />
         <h3 className="mt-4 font-display text-xl font-bold">Request received</h3>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -68,25 +92,65 @@ export function ContactForm() {
           <label className={labelCls} htmlFor="name">
             Name
           </label>
-          <input id="name" required value={values.name} onChange={set("name")} className={`mt-2 ${field}`} placeholder="Jane Doe" />
+          <input
+            id="name"
+            required
+            value={values.name}
+            onChange={set("name")}
+            className={`mt-2 ${field}`}
+            placeholder="Jane Doe"
+            aria-invalid={Boolean(errorFor("name"))}
+            aria-describedby={errorFor("name") ? "name-error" : undefined}
+          />
+          <FieldError id="name-error" message={errorFor("name")} />
         </div>
         <div>
           <label className={labelCls} htmlFor="phone">
             Phone
           </label>
-          <input id="phone" type="tel" required value={values.phone} onChange={set("phone")} className={`mt-2 ${field}`} placeholder="(847) 555-0100" />
+          <input
+            id="phone"
+            type="tel"
+            required
+            value={values.phone}
+            onChange={set("phone")}
+            className={`mt-2 ${field}`}
+            placeholder="(847) 555-0100"
+            aria-invalid={Boolean(errorFor("phone"))}
+            aria-describedby={errorFor("phone") ? "phone-error" : undefined}
+          />
+          <FieldError id="phone-error" message={errorFor("phone")} />
         </div>
         <div className="sm:col-span-2">
           <label className={labelCls} htmlFor="email">
             Email
           </label>
-          <input id="email" type="email" required value={values.email} onChange={set("email")} className={`mt-2 ${field}`} placeholder="you@email.com" />
+          <input
+            id="email"
+            type="email"
+            required
+            value={values.email}
+            onChange={set("email")}
+            className={`mt-2 ${field}`}
+            placeholder="you@email.com"
+            aria-invalid={Boolean(errorFor("email"))}
+            aria-describedby={errorFor("email") ? "email-error" : undefined}
+          />
+          <FieldError id="email-error" message={errorFor("email")} />
         </div>
         <div className="sm:col-span-2">
           <label className={labelCls} htmlFor="service">
             Service
           </label>
-          <select id="service" required value={values.service} onChange={set("service")} className={`mt-2 ${field}`}>
+          <select
+            id="service"
+            required
+            value={values.service}
+            onChange={set("service")}
+            className={`mt-2 ${field}`}
+            aria-invalid={Boolean(errorFor("service"))}
+            aria-describedby={errorFor("service") ? "service-error" : undefined}
+          >
             <option value="">Select a service</option>
             {services.map((s) => (
               <option key={s.slug} value={s.title}>
@@ -95,12 +159,22 @@ export function ContactForm() {
             ))}
             <option value="Other / Not sure">Other / Not sure</option>
           </select>
+          <FieldError id="service-error" message={errorFor("service")} />
         </div>
         <div>
           <label className={labelCls} htmlFor="date">
             Preferred Date
           </label>
-          <input id="date" type="date" value={values.date} onChange={set("date")} className={`mt-2 ${field}`} />
+          <input
+            id="date"
+            type="date"
+            value={values.date}
+            onChange={set("date")}
+            className={`mt-2 ${field}`}
+            aria-invalid={Boolean(errorFor("date"))}
+            aria-describedby={errorFor("date") ? "date-error" : undefined}
+          />
+          <FieldError id="date-error" message={errorFor("date")} />
         </div>
         <div>
           <label className={labelCls} htmlFor="time">
@@ -112,23 +186,45 @@ export function ContactForm() {
             <option>Afternoon (12pm – 4pm)</option>
             <option>Evening (4pm – 7pm)</option>
           </select>
+          <FieldError id="time-error" message={errorFor("time")} />
         </div>
         <div className="sm:col-span-2">
           <label className={labelCls} htmlFor="message">
             Message
           </label>
-          <textarea id="message" rows={4} value={values.message} onChange={set("message")} className={`mt-2 ${field} resize-none`} placeholder="Describe the issue, equipment brand and how long it's been happening." />
+          <textarea
+            id="message"
+            rows={4}
+            value={values.message}
+            onChange={set("message")}
+            className={`mt-2 ${field} resize-none`}
+            placeholder="Describe the issue, equipment brand and how long it's been happening."
+            aria-invalid={Boolean(errorFor("message"))}
+            aria-describedby={errorFor("message") ? "message-error" : undefined}
+          />
+          <FieldError id="message-error" message={errorFor("message")} />
         </div>
       </div>
 
       {status === "error" ? (
-        <p className="mt-4 text-sm text-destructive">Something went wrong. Please call us instead.</p>
+        <p className="mt-4 text-sm text-destructive" role="alert" aria-live="assertive">
+          Something went wrong. Please call us instead.
+        </p>
       ) : null}
 
-      <Button type="submit" size="lg" className="mt-6 w-full" disabled={status === "loading"}>
+      <Button
+        type="submit"
+        size="lg"
+        className="mt-6 w-full"
+        disabled={status === "loading"}
+        aria-disabled={status === "loading"}
+      >
         {status === "loading" ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> Sending…
+            <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+            <span role="status" aria-live="polite">
+              Sending…
+            </span>
           </>
         ) : (
           "Request Service"
@@ -139,6 +235,14 @@ export function ContactForm() {
       </p>
     </form>
   );
+}
+
+function FieldError({ id, message }) {
+  return message ? (
+    <p id={id} className="mt-1 text-xs text-destructive" role="alert">
+      {message}
+    </p>
+  ) : null;
 }
 
 export default ContactForm;

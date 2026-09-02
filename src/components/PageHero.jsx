@@ -12,7 +12,10 @@ export function PageHero({ eyebrow, title, text, image, imageAlt, crumbs = [] })
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         >
           {crumbs.length ? (
-            <nav aria-label="Breadcrumb" className="mb-5 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground">
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-5 flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground"
+            >
               {crumbs.map((c, i) => (
                 <span key={c.label} className="flex items-center gap-1.5">
                   {i > 0 ? <ChevronRight className="h-3 w-3" aria-hidden="true" /> : null}
@@ -28,9 +31,13 @@ export function PageHero({ eyebrow, title, text, image, imageAlt, crumbs = [] })
             </nav>
           ) : null}
           {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-          <h1 className="mt-3 text-[2.1rem] font-bold leading-[1.08] sm:text-4xl lg:text-[3.25rem]">{title}</h1>
+          <h1 className="mt-3 text-[2.1rem] font-bold leading-[1.08] sm:text-4xl lg:text-[3.25rem]">
+            {title}
+          </h1>
           {text ? (
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">{text}</p>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+              {text}
+            </p>
           ) : null}
         </motion.div>
 

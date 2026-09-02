@@ -14,6 +14,7 @@ export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const closeTimer = useRef(null);
+  const pointerDownRef = useRef(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
@@ -71,9 +72,23 @@ export function Navbar() {
           <div className="relative" onMouseEnter={openMenu} onMouseLeave={closeMenu}>
             <button
               type="button"
+              id="services-menu-trigger"
               aria-expanded={servicesOpen}
               aria-haspopup="true"
-              onClick={() => setServicesOpen((v) => !v)}
+              aria-controls="services-menu"
+              onClick={() => setServicesOpen(true)}
+              onPointerDown={() => {
+                pointerDownRef.current = true;
+              }}
+              onPointerUp={() => {
+                pointerDownRef.current = false;
+              }}
+              onPointerCancel={() => {
+                pointerDownRef.current = false;
+              }}
+              onFocus={() => {
+                if (!pointerDownRef.current) openMenu();
+              }}
               className={cn(
                 "flex items-center gap-1.5 rounded-md px-3.5 py-2 text-sm font-semibold transition-colors",
                 servicesActive || servicesOpen ? "text-primary" : "hover:text-primary",
@@ -87,8 +102,15 @@ export function Navbar() {
             </button>
             <AnimatePresence>
               {servicesOpen ? (
-                <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
-                  <ServicesMenu onNavigate={() => setServicesOpen(false)} />
+                <div
+                  className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3"
+                  onBlur={(event) => {
+                    if (!event.currentTarget.parentElement?.contains(event.relatedTarget)) {
+                      setServicesOpen(false);
+                    }
+                  }}
+                >
+                  <ServicesMenu id="services-menu" onNavigate={() => setServicesOpen(false)} />
                 </div>
               ) : null}
             </AnimatePresence>

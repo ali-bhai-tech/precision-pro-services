@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { serviceNav } from "../data/navigation";
 
-export function ServicesMenu({ onNavigate }) {
+export function ServicesMenu({ id, onNavigate }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -8 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.18, ease: "easeOut" }}
+      id={id}
       className="w-[min(72rem,calc(100vw-3rem))] overflow-hidden rounded-xl border border-border bg-popover shadow-lift"
     >
       <div className="grid gap-px bg-border md:grid-cols-3">
@@ -21,7 +22,10 @@ export function ServicesMenu({ onNavigate }) {
               className="group flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-primary"
             >
               {group.label}
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              <ArrowRight
+                className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
             </Link>
             <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{group.short}</p>
             <ul className="mt-4 space-y-1">

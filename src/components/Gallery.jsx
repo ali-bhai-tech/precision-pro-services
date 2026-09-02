@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import SectionHeading from "./SectionHeading";
@@ -13,7 +13,11 @@ import thermostat from "../assets/thermostat.jpg";
 import wine from "../assets/wine.jpg";
 
 const images = [
-  { src: hero, alt: "Technician servicing a high-efficiency furnace", span: "lg:col-span-2 lg:row-span-2" },
+  {
+    src: hero,
+    alt: "Technician servicing a high-efficiency furnace",
+    span: "lg:col-span-2 lg:row-span-2",
+  },
   { src: hvac, alt: "Air conditioner condenser maintenance at a residence" },
   { src: refrigeration, alt: "Commercial walk-in refrigeration installation" },
   { src: process, alt: "Ductwork installation in a new home", span: "lg:col-span-2" },
@@ -25,6 +29,25 @@ const images = [
 
 export function Gallery() {
   const [active, setActive] = useState(null);
+  const openerRef = useRef(null);
+  const closeRef = useRef(null);
+
+  useEffect(() => {
+    if (!active) return;
+
+    closeRef.current?.focus();
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setActive(null);
+    };
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+      openerRef.current?.focus();
+    };
+  }, [active]);
 
   return (
     <section className="bg-surface py-20 lg:py-28">
@@ -39,7 +62,10 @@ export function Gallery() {
             <RevealItem key={img.alt} className={img.span ?? ""}>
               <button
                 type="button"
-                onClick={() => setActive(img)}
+                onClick={(event) => {
+                  openerRef.current = event.currentTarget;
+                  setActive(img);
+                }}
                 className="group block h-full w-full overflow-hidden rounded-xl border border-border bg-card"
               >
                 <img
@@ -63,12 +89,16 @@ export function Gallery() {
             className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/90 p-4"
             role="dialog"
             aria-modal="true"
-            aria-label={active.alt}
-            onClick={() => setActive(null)}
+            aria-labelledby="gallery-dialog-title"
+            onClick={(event) => event.target === event.currentTarget && setActive(null)}
           >
+            <h2 id="gallery-dialog-title" className="sr-only">
+              Enlarged image: {active.alt}
+            </h2>
             <button
               type="button"
               onClick={() => setActive(null)}
+              ref={closeRef}
               aria-label="Close image"
               className="absolute right-5 top-5 rounded-md border border-ink-foreground/25 p-2 text-ink-foreground"
             >
@@ -80,6 +110,7 @@ export function Gallery() {
               exit={{ scale: 0.96, opacity: 0 }}
               src={active.src}
               alt={active.alt}
+              onClick={(event) => event.stopPropagation()}
               className="max-h-[85vh] w-auto max-w-full rounded-xl object-contain"
             />
           </motion.div>

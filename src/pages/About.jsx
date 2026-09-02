@@ -27,13 +27,34 @@ export function About() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           <div className="grid grid-cols-2 gap-4 self-start">
             <Reveal className="col-span-2 overflow-hidden rounded-xl border border-border shadow-soft">
-              <img src={processImg} alt="Ductwork installation" loading="lazy" className="h-52 w-full object-cover lg:h-64" />
+              <img
+                src={processImg}
+                alt="Ductwork installation"
+                loading="lazy"
+                className="h-52 w-full object-cover lg:h-64"
+              />
             </Reveal>
-            <Reveal delay={0.08} className="overflow-hidden rounded-xl border border-border shadow-soft">
-              <img src={refrigerationImg} alt="Commercial refrigeration service" loading="lazy" className="h-40 w-full object-cover lg:h-52" />
+            <Reveal
+              delay={0.08}
+              className="overflow-hidden rounded-xl border border-border shadow-soft"
+            >
+              <img
+                src={refrigerationImg}
+                alt="Commercial refrigeration service"
+                loading="lazy"
+                className="h-40 w-full object-cover lg:h-52"
+              />
             </Reveal>
-            <Reveal delay={0.14} className="overflow-hidden rounded-xl border border-border shadow-soft">
-              <img src={appliancesImg} alt="Premium kitchen appliances" loading="lazy" className="h-40 w-full object-cover lg:h-52" />
+            <Reveal
+              delay={0.14}
+              className="overflow-hidden rounded-xl border border-border shadow-soft"
+            >
+              <img
+                src={appliancesImg}
+                alt="Premium kitchen appliances"
+                loading="lazy"
+                className="h-40 w-full object-cover lg:h-52"
+              />
             </Reveal>
           </div>
 
@@ -71,7 +92,10 @@ export function About() {
 
             <RevealGroup className="mt-10 grid gap-4 sm:grid-cols-3">
               {categories.map((c) => (
-                <RevealItem key={c.slug} className="rounded-xl border border-border bg-card p-5 shadow-soft">
+                <RevealItem
+                  key={c.slug}
+                  className="rounded-xl border border-border bg-card p-5 shadow-soft"
+                >
                   <p className="font-display text-sm font-bold">{c.title}</p>
                   <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{c.short}</p>
                 </RevealItem>

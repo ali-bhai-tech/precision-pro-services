@@ -15,7 +15,9 @@ export function CTASection({
           <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-primary">
             <Clock className="h-3.5 w-3.5" aria-hidden="true" /> {eyebrow}
           </p>
-          <h2 className="mt-4 text-3xl font-bold leading-[1.1] text-ink-foreground sm:text-4xl">{title}</h2>
+          <h2 className="mt-4 text-3xl font-bold leading-[1.1] text-ink-foreground sm:text-4xl">
+            {title}
+          </h2>
           <p className="mt-4 text-base leading-relaxed text-ink-foreground/70">{text}</p>
         </div>
         <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto lg:shrink-0">

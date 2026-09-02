@@ -17,16 +17,23 @@ export function Footer() {
             <span className="font-display text-base font-bold">{siteConfig.name}</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-ink-foreground/65">
-            Heating, cooling, refrigeration and high-end appliance service for {siteConfig.serviceArea}.
+            Heating, cooling, refrigeration and high-end appliance service for{" "}
+            {siteConfig.serviceArea}.
           </p>
           <ul className="mt-6 space-y-3 text-sm">
             <li>
-              <a href={siteConfig.phoneHref} className="flex items-center gap-2.5 hover:text-primary">
+              <a
+                href={siteConfig.phoneHref}
+                className="flex items-center gap-2.5 hover:text-primary"
+              >
                 <Phone className="h-4 w-4 text-primary" aria-hidden="true" /> {siteConfig.phone}
               </a>
             </li>
             <li>
-              <a href={siteConfig.emailHref} className="flex items-center gap-2.5 break-all hover:text-primary">
+              <a
+                href={siteConfig.emailHref}
+                className="flex items-center gap-2.5 break-all hover:text-primary"
+              >
                 <Mail className="h-4 w-4 text-primary" aria-hidden="true" /> {siteConfig.email}
               </a>
             </li>
@@ -62,25 +69,21 @@ export function Footer() {
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            {siteConfig.social.map((s) => {
-              const Icon = socialIcons[s.label] ?? Facebook;
-              return (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  aria-label={s.label}
-                  className="text-ink-foreground/60 transition-colors hover:text-primary"
-                >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
-                </a>
-              );
-            })}
-            <a href="#" className="hover:text-primary">
-              Privacy
-            </a>
-            <a href="#" className="hover:text-primary">
-              Terms
-            </a>
+            {siteConfig.social
+              .filter((s) => s.href && s.href !== "#")
+              .map((s) => {
+                const Icon = socialIcons[s.label] ?? Facebook;
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href}
+                    aria-label={s.label}
+                    className="text-ink-foreground/60 transition-colors hover:text-primary"
+                  >
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                );
+              })}
           </div>
         </div>
       </div>
@@ -91,7 +94,9 @@ export function Footer() {
 function FooterCol({ title, children }) {
   return (
     <div>
-      <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-ink-foreground/50">{title}</h3>
+      <h3 className="text-xs font-bold uppercase tracking-[0.16em] text-ink-foreground/50">
+        {title}
+      </h3>
       <ul className="mt-4 space-y-2.5 text-sm">{children}</ul>
     </div>
   );

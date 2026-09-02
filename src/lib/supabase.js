@@ -35,7 +35,6 @@ export async function getTestimonials() {
 
 export async function submitContactRequest(payload) {
   // later: return supabase.from("contact_requests").insert(payload)
-  if (typeof console !== "undefined") console.info("Contact request (local):", payload);
   await new Promise((r) => setTimeout(r, 600));
   return { ok: true, data: payload, error: null };
 }

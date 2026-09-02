@@ -33,20 +33,58 @@ export const siteConfig = {
     { value: 1200, suffix: "+", label: "Appliance Services" },
   ],
   whyChooseUs: [
-    { title: "Experienced Technicians", text: "Factory-trained specialists with 15+ years in the field." },
-    { title: "Fast Response", text: "Same-day dispatch across our service area whenever possible." },
+    {
+      title: "Experienced Technicians",
+      text: "Factory-trained specialists with 15+ years in the field.",
+    },
+    {
+      title: "Fast Response",
+      text: "Same-day dispatch across our service area whenever possible.",
+    },
     { title: "Reliable Repairs", text: "We fix root causes, not symptoms — repairs that hold up." },
-    { title: "Quality Workmanship", text: "Clean installs, proper commissioning, documented results." },
-    { title: "Transparent Recommendations", text: "Repair or replace, we tell you what we'd do in your home." },
-    { title: "Customer-Focused Service", text: "Clear pricing, clear timelines, respect for your property." },
-    { title: "Emergency Support", text: "24/7 availability when heat, cooling or refrigeration fails." },
+    {
+      title: "Quality Workmanship",
+      text: "Clean installs, proper commissioning, documented results.",
+    },
+    {
+      title: "Transparent Recommendations",
+      text: "Repair or replace, we tell you what we'd do in your home.",
+    },
+    {
+      title: "Customer-Focused Service",
+      text: "Clear pricing, clear timelines, respect for your property.",
+    },
+    {
+      title: "Emergency Support",
+      text: "24/7 availability when heat, cooling or refrigeration fails.",
+    },
   ],
   process: [
-    { step: "01", title: "Schedule", text: "Book online or by phone with a time window that works for you." },
-    { step: "02", title: "Diagnose", text: "Full system inspection with electronic and mechanical testing." },
-    { step: "03", title: "Recommend", text: "Written options with honest repair-vs-replace guidance." },
-    { step: "04", title: "Repair / Install", text: "Professional work using OEM-grade parts and equipment." },
-    { step: "05", title: "Test", text: "Performance verification and a walkthrough before we leave." },
+    {
+      step: "01",
+      title: "Schedule",
+      text: "Book online or by phone with a time window that works for you.",
+    },
+    {
+      step: "02",
+      title: "Diagnose",
+      text: "Full system inspection with electronic and mechanical testing.",
+    },
+    {
+      step: "03",
+      title: "Recommend",
+      text: "Written options with honest repair-vs-replace guidance.",
+    },
+    {
+      step: "04",
+      title: "Repair / Install",
+      text: "Professional work using OEM-grade parts and equipment.",
+    },
+    {
+      step: "05",
+      title: "Test",
+      text: "Performance verification and a walkthrough before we leave.",
+    },
   ],
   social: [
     { label: "Facebook", href: "#" },

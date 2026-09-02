@@ -69,9 +69,18 @@ export const services = [
       "Longer equipment life",
     ],
     faqs: [
-      { q: "How often should a furnace be serviced?", a: "Once a year, ideally in early fall before the heating season starts." },
-      { q: "Should I repair or replace my furnace?", a: "If it's over 15 years old and the repair exceeds roughly a third of replacement cost, replacement usually wins. We give you both numbers." },
-      { q: "Do you offer emergency no-heat service?", a: "Yes — 24/7 emergency dispatch across our service area." },
+      {
+        q: "How often should a furnace be serviced?",
+        a: "Once a year, ideally in early fall before the heating season starts.",
+      },
+      {
+        q: "Should I repair or replace my furnace?",
+        a: "If it's over 15 years old and the repair exceeds roughly a third of replacement cost, replacement usually wins. We give you both numbers.",
+      },
+      {
+        q: "Do you offer emergency no-heat service?",
+        a: "Yes — 24/7 emergency dispatch across our service area.",
+      },
     ],
   },
   {
@@ -104,9 +113,18 @@ export const services = [
       "Better humidity control",
     ],
     faqs: [
-      { q: "Why does my AC freeze up?", a: "Almost always low airflow or low refrigerant. Both need diagnosis — adding refrigerant alone hides a leak." },
-      { q: "When should I schedule AC maintenance?", a: "Spring, before the first stretch of hot weather." },
-      { q: "Do you service ductless mini-splits?", a: "Yes, including multi-zone systems and inverter units." },
+      {
+        q: "Why does my AC freeze up?",
+        a: "Almost always low airflow or low refrigerant. Both need diagnosis — adding refrigerant alone hides a leak.",
+      },
+      {
+        q: "When should I schedule AC maintenance?",
+        a: "Spring, before the first stretch of hot weather.",
+      },
+      {
+        q: "Do you service ductless mini-splits?",
+        a: "Yes, including multi-zone systems and inverter units.",
+      },
     ],
   },
   {
@@ -139,8 +157,14 @@ export const services = [
       "Quieter airflow",
     ],
     faqs: [
-      { q: "Do heat pumps work in Illinois winters?", a: "Modern cold-climate and dual-fuel systems do. We set the balance point so the backup only runs when it should." },
-      { q: "How do I know if my ducts leak?", a: "Hot and cold rooms, dusty returns and high bills are the usual signs. We measure static pressure to confirm." },
+      {
+        q: "Do heat pumps work in Illinois winters?",
+        a: "Modern cold-climate and dual-fuel systems do. We set the balance point so the backup only runs when it should.",
+      },
+      {
+        q: "How do I know if my ducts leak?",
+        a: "Hot and cold rooms, dusty returns and high bills are the usual signs. We measure static pressure to confirm.",
+      },
       { q: "Can you add zoning?", a: "Yes, on most systems with adequate duct capacity." },
     ],
   },
@@ -174,9 +198,18 @@ export const services = [
       "Equipment protection",
     ],
     faqs: [
-      { q: "Will a smart thermostat work with my system?", a: "Usually, but multi-stage and heat pump systems need correct configuration. We verify compatibility first." },
-      { q: "What is a C-wire?", a: "A common wire that provides continuous power. We can add one or install an adapter." },
-      { q: "How long does installation take?", a: "Typically under an hour, including setup and a walkthrough." },
+      {
+        q: "Will a smart thermostat work with my system?",
+        a: "Usually, but multi-stage and heat pump systems need correct configuration. We verify compatibility first.",
+      },
+      {
+        q: "What is a C-wire?",
+        a: "A common wire that provides continuous power. We can add one or install an adapter.",
+      },
+      {
+        q: "How long does installation take?",
+        a: "Typically under an hour, including setup and a walkthrough.",
+      },
     ],
   },
 
@@ -211,9 +244,18 @@ export const services = [
       "Longer system life",
     ],
     faqs: [
-      { q: "How often should condenser coils be cleaned?", a: "Every 3–6 months in commercial settings, annually for lighter-duty systems." },
-      { q: "Can a dirty condenser cause product loss?", a: "Yes — it's one of the most common causes of gradual temperature rise." },
-      { q: "Do you handle remote condensing units?", a: "Yes, including rooftop and outdoor rack installations." },
+      {
+        q: "How often should condenser coils be cleaned?",
+        a: "Every 3–6 months in commercial settings, annually for lighter-duty systems.",
+      },
+      {
+        q: "Can a dirty condenser cause product loss?",
+        a: "Yes — it's one of the most common causes of gradual temperature rise.",
+      },
+      {
+        q: "Do you handle remote condensing units?",
+        a: "Yes, including rooftop and outdoor rack installations.",
+      },
     ],
   },
   {
@@ -246,9 +288,18 @@ export const services = [
       "Lower run time",
     ],
     faqs: [
-      { q: "Why does my evaporator keep icing?", a: "Typically a defrost failure, restricted airflow, or a refrigerant charge problem." },
-      { q: "Do you service low-temp freezer evaporators?", a: "Yes, medium- and low-temperature systems both." },
-      { q: "How fast can you respond?", a: "Commercial refrigeration gets priority dispatch, 24/7." },
+      {
+        q: "Why does my evaporator keep icing?",
+        a: "Typically a defrost failure, restricted airflow, or a refrigerant charge problem.",
+      },
+      {
+        q: "Do you service low-temp freezer evaporators?",
+        a: "Yes, medium- and low-temperature systems both.",
+      },
+      {
+        q: "How fast can you respond?",
+        a: "Commercial refrigeration gets priority dispatch, 24/7.",
+      },
     ],
   },
   {
@@ -281,9 +332,18 @@ export const services = [
       "Predictable maintenance costs",
     ],
     faqs: [
-      { q: "Do you offer maintenance contracts?", a: "Yes — scheduled visits with documented readings and priority response." },
-      { q: "Can you service the system after hours?", a: "Yes, we schedule around business hours whenever possible." },
-      { q: "Do you install new walk-ins?", a: "We install, relocate and commission walk-in coolers and freezers." },
+      {
+        q: "Do you offer maintenance contracts?",
+        a: "Yes — scheduled visits with documented readings and priority response.",
+      },
+      {
+        q: "Can you service the system after hours?",
+        a: "Yes, we schedule around business hours whenever possible.",
+      },
+      {
+        q: "Do you install new walk-ins?",
+        a: "We install, relocate and commission walk-in coolers and freezers.",
+      },
     ],
   },
   {
@@ -316,9 +376,18 @@ export const services = [
       "Fast turnaround on common parts",
     ],
     faqs: [
-      { q: "Is it worth repairing a refrigerator?", a: "Often yes, especially for units under 10 years old or premium models." },
-      { q: "Do you carry common parts on the truck?", a: "We stock high-failure-rate parts to finish most jobs in one visit." },
-      { q: "Do you service commercial reach-ins?", a: "Yes, including prep tables and merchandisers." },
+      {
+        q: "Is it worth repairing a refrigerator?",
+        a: "Often yes, especially for units under 10 years old or premium models.",
+      },
+      {
+        q: "Do you carry common parts on the truck?",
+        a: "We stock high-failure-rate parts to finish most jobs in one visit.",
+      },
+      {
+        q: "Do you service commercial reach-ins?",
+        a: "Yes, including prep tables and merchandisers.",
+      },
     ],
   },
   {
@@ -351,9 +420,18 @@ export const services = [
       "Extended unit lifespan",
     ],
     faqs: [
-      { q: "What temperature should a wine cooler hold?", a: "Generally 45–55°F for whites and 55–65°F for reds, with minimal fluctuation." },
-      { q: "Do you service built-in units?", a: "Yes, including cabinetry-integrated and dual-zone models." },
-      { q: "Can vibration damage wine?", a: "Over time, yes. We check compressor mounts and isolation during service." },
+      {
+        q: "What temperature should a wine cooler hold?",
+        a: "Generally 45–55°F for whites and 55–65°F for reds, with minimal fluctuation.",
+      },
+      {
+        q: "Do you service built-in units?",
+        a: "Yes, including cabinetry-integrated and dual-zone models.",
+      },
+      {
+        q: "Can vibration damage wine?",
+        a: "Over time, yes. We check compressor mounts and isolation during service.",
+      },
     ],
   },
 
@@ -388,9 +466,18 @@ export const services = [
       "Long-term maintenance guidance",
     ],
     faqs: [
-      { q: "Do you work on older Sub-Zero units?", a: "Yes, including legacy 500 and 600 series built-ins." },
-      { q: "How often should the condenser be cleaned?", a: "Every 6–12 months — it's the single biggest cause of premature failure." },
-      { q: "Can you service integrated column units?", a: "Yes, refrigerator, freezer and wine columns." },
+      {
+        q: "Do you work on older Sub-Zero units?",
+        a: "Yes, including legacy 500 and 600 series built-ins.",
+      },
+      {
+        q: "How often should the condenser be cleaned?",
+        a: "Every 6–12 months — it's the single biggest cause of premature failure.",
+      },
+      {
+        q: "Can you service integrated column units?",
+        a: "Yes, refrigerator, freezer and wine columns.",
+      },
     ],
   },
   {
@@ -423,8 +510,14 @@ export const services = [
       "Extended appliance life",
     ],
     faqs: [
-      { q: "Why do my burners keep clicking?", a: "Usually a wet or cracked igniter, or a misaligned burner cap. Both are quick fixes." },
-      { q: "Can you calibrate my oven?", a: "Yes, we verify with independent instrumentation and adjust the offset." },
+      {
+        q: "Why do my burners keep clicking?",
+        a: "Usually a wet or cracked igniter, or a misaligned burner cap. Both are quick fixes.",
+      },
+      {
+        q: "Can you calibrate my oven?",
+        a: "Yes, we verify with independent instrumentation and adjust the offset.",
+      },
       { q: "Do you service Viking refrigeration?", a: "Yes, built-in and free-standing models." },
     ],
   },
@@ -458,9 +551,15 @@ export const services = [
       "Protected warranty compliance",
     ],
     faqs: [
-      { q: "What do induction error codes mean?", a: "They usually point to a specific power module or sensor — we read them at the board." },
+      {
+        q: "What do induction error codes mean?",
+        a: "They usually point to a specific power module or sensor — we read them at the board.",
+      },
       { q: "Do you service steam ovens?", a: "Yes, including descaling and water system repairs." },
-      { q: "Do you handle built-in column refrigeration?", a: "Yes, including Freedom column installations." },
+      {
+        q: "Do you handle built-in column refrigeration?",
+        a: "Yes, including Freedom column installations.",
+      },
     ],
   },
   {
@@ -493,9 +592,18 @@ export const services = [
       "Longer appliance service life",
     ],
     faqs: [
-      { q: "Why is my Wolf oven off by 25 degrees?", a: "Typically a calibration offset or an aging temperature probe — both correctable." },
-      { q: "Do you service Wolf modules and griddles?", a: "Yes, including integrated cooktop modules." },
-      { q: "Are parts readily available?", a: "We source OEM-grade parts; most repairs finish within a few days." },
+      {
+        q: "Why is my Wolf oven off by 25 degrees?",
+        a: "Typically a calibration offset or an aging temperature probe — both correctable.",
+      },
+      {
+        q: "Do you service Wolf modules and griddles?",
+        a: "Yes, including integrated cooktop modules.",
+      },
+      {
+        q: "Are parts readily available?",
+        a: "We source OEM-grade parts; most repairs finish within a few days.",
+      },
     ],
   },
   {
@@ -528,8 +636,14 @@ export const services = [
       "Clean, respectful in-home service",
     ],
     faqs: [
-      { q: "Is a dishwasher repair worth it?", a: "For most premium units, yes — drain and spray issues are inexpensive to correct." },
-      { q: "Do you repair French-door refrigerators?", a: "Yes, including ice and water dispenser systems." },
+      {
+        q: "Is a dishwasher repair worth it?",
+        a: "For most premium units, yes — drain and spray issues are inexpensive to correct.",
+      },
+      {
+        q: "Do you repair French-door refrigerators?",
+        a: "Yes, including ice and water dispenser systems.",
+      },
       { q: "How soon can you come out?", a: "Often same or next day within our service area." },
     ],
   },

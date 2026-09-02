@@ -21,6 +21,8 @@ export const Route = createFileRoute("/hvac/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/hvac/${params.slug}` },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: service.short },
       ],
       links: [{ rel: "canonical", href: `/hvac/${params.slug}` }],
       scripts: [

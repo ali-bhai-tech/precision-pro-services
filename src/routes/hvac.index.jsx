@@ -16,6 +16,8 @@ export const Route = createFileRoute("/hvac/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/hvac" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
     links: [{ rel: "canonical", href: "/hvac" }],
   }),

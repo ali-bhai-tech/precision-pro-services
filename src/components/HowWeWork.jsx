@@ -32,20 +32,22 @@ export function HowWeWork() {
             className="h-[18rem] w-full object-cover sm:h-[24rem] lg:h-[30rem]"
           />
           <div className="absolute inset-0 bg-ink/45" />
-          <button
-            type="button"
-            aria-label="Play overview video"
+          <div
+            role="img"
+            aria-label="Overview of our service process"
             className="absolute inset-0 m-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lift transition-transform hover:scale-105"
           >
             <Play className="ml-1 h-7 w-7 fill-current" aria-hidden="true" />
-          </button>
+          </div>
         </motion.div>
 
         <RevealGroup className="mt-12 grid gap-px overflow-hidden rounded-xl border border-ink-foreground/10 bg-ink-foreground/10 sm:grid-cols-2 lg:grid-cols-5">
           {siteConfig.process.map((s) => (
             <RevealItem key={s.step} className="bg-ink p-6">
               <span className="font-display text-2xl font-bold text-primary">{s.step}</span>
-              <h3 className="mt-3 font-display text-base font-bold text-ink-foreground">{s.title}</h3>
+              <h3 className="mt-3 font-display text-base font-bold text-ink-foreground">
+                {s.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-foreground/60">{s.text}</p>
             </RevealItem>
           ))}

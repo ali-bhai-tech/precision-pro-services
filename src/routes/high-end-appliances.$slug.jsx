@@ -21,6 +21,8 @@ export const Route = createFileRoute("/high-end-appliances/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/high-end-appliances/${params.slug}` },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: service.short },
       ],
       links: [{ rel: "canonical", href: `/high-end-appliances/${params.slug}` }],
       scripts: [

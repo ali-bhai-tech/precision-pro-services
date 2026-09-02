@@ -21,6 +21,8 @@ export const Route = createFileRoute("/refrigeration/$slug")({
         { property: "og:type", content: "article" },
         { property: "og:url", content: `/refrigeration/${params.slug}` },
         { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: service.short },
       ],
       links: [{ rel: "canonical", href: `/refrigeration/${params.slug}` }],
       scripts: [

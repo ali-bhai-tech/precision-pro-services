@@ -17,7 +17,6 @@ import Navbar from "../components/Navbar";
 // @ts-expect-error - JSX component
 import Footer from "../components/Footer";
 
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -86,12 +85,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Northline Mechanical | HVAC, Refrigeration & Appliance Service" },
       {
         name: "description",
-        content:
-          "Premium HVAC, refrigeration and high-end appliance service in Pingree Grove, IL.",
+        content: "Premium HVAC, refrigeration and high-end appliance service in Pingree Grove, IL.",
       },
       { property: "og:site_name", content: "Northline Mechanical" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Northline Mechanical | HVAC, Refrigeration & Appliance Service",
+      },
+      {
+        name: "twitter:description",
+        content: "Premium HVAC, refrigeration and high-end appliance service in Pingree Grove, IL.",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -168,4 +174,3 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
-

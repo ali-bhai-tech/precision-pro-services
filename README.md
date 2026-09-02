@@ -78,51 +78,51 @@ MAIN:
 
 /
 
- /about
+/about
 
- /contact
+/contact
 
 SERVICE CATEGORY:
 
- /hvac
+/hvac
 
- /refrigeration
+/refrigeration
 
- /high-end-appliances
+/high-end-appliances
 
 HVAC:
 
- /hvac/furnaces
+/hvac/furnaces
 
- /hvac/air-conditioners
+/hvac/air-conditioners
 
- /hvac/heat-pumps-ductwork
+/hvac/heat-pumps-ductwork
 
- /hvac/thermostats
+/hvac/thermostats
 
 REFRIGERATION:
 
- /refrigeration/condenser
+/refrigeration/condenser
 
- /refrigeration/evaporator
+/refrigeration/evaporator
 
- /refrigeration/walk-in-coolers
+/refrigeration/walk-in-coolers
 
- /refrigeration/free-standing-refrigerators
+/refrigeration/free-standing-refrigerators
 
- /refrigeration/wine-coolers
+/refrigeration/wine-coolers
 
 HIGH-END APPLIANCES:
 
- /high-end-appliances/sub-zero
+/high-end-appliances/sub-zero
 
- /high-end-appliances/viking
+/high-end-appliances/viking
 
- /high-end-appliances/thermador
+/high-end-appliances/thermador
 
- /high-end-appliances/wolf
+/high-end-appliances/wolf
 
- /high-end-appliances/kitchenaid
+/high-end-appliances/kitchenaid
 
 TOTAL: 20 pages/routes.
 
@@ -160,21 +160,21 @@ Example service structure:
 
 {
 
-  slug: "furnaces",
+slug: "furnaces",
 
-  category: "HVAC",
+category: "HVAC",
 
-  title: "Furnace Services",
+title: "Furnace Services",
 
-  description: "...",
+description: "...",
 
-  image: "...",
+image: "...",
 
-  benefits: [...],
+benefits: [...],
 
-  commonProblems: [...],
+commonProblems: [...],
 
-  faqs: [...]
+faqs: [...]
 
 }
 
@@ -216,37 +216,37 @@ Services dropdown:
 
 HVAC
 
-  Furnaces
+Furnaces
 
-  Air Conditioners
+Air Conditioners
 
-  Heat Pumps & Ductwork
+Heat Pumps & Ductwork
 
-  Thermostats
+Thermostats
 
 REFRIGERATION
 
-  Condenser
+Condenser
 
-  Evaporator
+Evaporator
 
-  Walk-In Coolers
+Walk-In Coolers
 
-  Free Standing Refrigerators
+Free Standing Refrigerators
 
-  Wine Coolers
+Wine Coolers
 
 HIGH-END APPLIANCES
 
-  Sub-Zero
+Sub-Zero
 
-  Viking
+Viking
 
-  Thermador
+Thermador
 
-  Wolf
+Wolf
 
-  KitchenAid
+KitchenAid
 
 Use a clean mega-menu / multi-level dropdown.
 
@@ -912,15 +912,15 @@ Use:
 
 src/
 
-  components/
+components/
 
-  pages/
+pages/
 
-  data/
+data/
 
-  layouts/
+layouts/
 
-  lib/
+lib/
 
 Important files:
 
