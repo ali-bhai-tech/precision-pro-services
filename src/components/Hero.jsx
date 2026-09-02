@@ -74,6 +74,7 @@ export function Hero() {
               alt="HVAC technician servicing a high-efficiency furnace"
               width={1600}
               height={1100}
+              fetchPriority="high"
               className="h-[22rem] w-full object-cover sm:h-[26rem] lg:h-[34rem]"
             />
           </div>

@@ -31,6 +31,8 @@ export function About() {
                 src={processImg}
                 alt="Ductwork installation"
                 loading="lazy"
+                width={1600}
+                height={1000}
                 className="h-52 w-full object-cover lg:h-64"
               />
             </Reveal>
@@ -42,6 +44,8 @@ export function About() {
                 src={refrigerationImg}
                 alt="Commercial refrigeration service"
                 loading="lazy"
+                width={1200}
+                height={900}
                 className="h-40 w-full object-cover lg:h-52"
               />
             </Reveal>
@@ -53,6 +57,8 @@ export function About() {
                 src={appliancesImg}
                 alt="Premium kitchen appliances"
                 loading="lazy"
+                width={1200}
+                height={900}
                 className="h-40 w-full object-cover lg:h-52"
               />
             </Reveal>

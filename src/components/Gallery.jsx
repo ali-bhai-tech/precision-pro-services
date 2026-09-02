@@ -72,6 +72,8 @@ export function Gallery() {
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
+                  width={img.src === process ? 1600 : 1200}
+                  height={img.src === process ? 1000 : 900}
                   className="aspect-[4/3] h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06] lg:aspect-auto"
                 />
               </button>
