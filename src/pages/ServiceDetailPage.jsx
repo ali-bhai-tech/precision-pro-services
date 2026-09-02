@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { AlertTriangle, Check, ChevronDown, Wrench } from "lucide-react";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
@@ -110,15 +111,16 @@ export function ServiceDetailPage({ categorySlug, slug }) {
               <ul className="mt-4 space-y-1">
                 {getServicesByCategory(categorySlug).map((s) => (
                   <li key={s.slug}>
-                    <a
-                      href={`/${category.slug}/${s.slug}`}
+                    <Link
+                      to={`/${category.slug}/$slug`}
+                      params={{ slug: s.slug }}
                       className={`block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary ${
                         s.slug === slug ? "bg-secondary text-primary" : "text-foreground/85"
                       }`}
                       aria-current={s.slug === slug ? "page" : undefined}
                     >
                       {s.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
