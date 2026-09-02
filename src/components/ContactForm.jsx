@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { submitContactRequest } from "../lib/contact";
 import { CheckCircle2, Loader2 } from "lucide-react";
-import { submitContactRequest } from "../lib/supabase";
 import { services } from "../data/services";
 import { contactRequestSchema } from "../lib/validation/contact";
 import Button from "./Button";
@@ -43,8 +43,11 @@ export function ContactForm() {
     setFieldErrors({});
     setStatus("loading");
     try {
-      const res = await submitContactRequest(validation.data);
-      if (!res?.ok) throw new Error("Contact request failed");
+      const res = await submitContactRequest({ data: validation.data });
+      if (!res?.success) {
+        setFieldErrors(res?.fieldErrors ?? {});
+        throw new Error("Contact request failed");
+      }
       setStatus("success");
       setValues(empty);
     } catch {
@@ -208,7 +211,7 @@ export function ContactForm() {
 
       {status === "error" ? (
         <p className="mt-4 text-sm text-destructive" role="alert" aria-live="assertive">
-          Something went wrong. Please call us instead.
+          Something went wrong while sending your request. Please try again.
         </p>
       ) : null}
 

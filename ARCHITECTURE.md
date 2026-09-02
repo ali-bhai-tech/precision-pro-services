@@ -30,7 +30,7 @@ There are three service categories and twelve service records. Category and deta
 
 Browser-safe code includes the active React components, local data, bundled assets, and class-name utility. Browser-only APIs are isolated to client effects such as navbar scroll handling and Lovable runtime reporting. Server-side code is limited to TanStack Start startup, SSR handling, middleware, and error capture.
 
-The contact form currently calls a local mock in `src/lib/supabase.js`. The future production flow should be:
+The contact form calls a server function in `src/lib/contact.js`. The handler validates and normalizes requests, then dynamically loads the server-only repository in `src/server/contact/repository.js`. The production flow is:
 
 ```text
 ContactForm UI
@@ -40,11 +40,13 @@ ContactForm UI
   -> contact_requests table
 ```
 
-Future contact submission code should live under a dedicated server boundary such as `src/server/contact/` or a clearly server-marked module, and should never import service-role credentials into browser code. Public Supabase values may use Vite client environment variables only when needed; service-role credentials must remain server-only.
+TanStack Start's import protection requires the `createServerFn` export to be importable by the browser bundle; the handler body still executes on the server. The repository loads `src/server/contact/supabase.js`, which creates a server-only Supabase client from environment variables. Service-role credentials remain server-only.
+
+The database contract is recorded in `supabase/migrations/001_create_contact_requests.sql`. It enables Row Level Security without public policies; the server-side service-role client performs inserts while visitors receive no read, update, or delete access. The migration has not been applied or verified against the live project in this phase.
 
 ## Environment Strategy
 
-No environment variables are currently consumed. When the backend is added, document variable names in `.env.example`, keep local secrets in ignored environment files, and separate public browser configuration from server-only credentials.
+The server expects `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`, documented without values in `.env.example`. Local secrets belong in ignored environment files, and neither variable is prefixed for client exposure.
 
 ## Deliberate Scope
 
