@@ -8,9 +8,15 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { MotionConfig } from "framer-motion";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+// @ts-expect-error - JSX component
+import Navbar from "../components/Navbar";
+// @ts-expect-error - JSX component
+import Footer from "../components/Footer";
+
 
 function NotFoundComponent() {
   return (
