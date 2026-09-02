@@ -53,7 +53,8 @@ export function Hero() {
               <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" /> Licensed & insured
             </li>
             <li className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-primary" aria-hidden="true" /> {siteConfig.emergency}
+              <Clock className="h-4 w-4 text-primary" aria-hidden="true" />{" "}
+              {siteConfig.availability}
             </li>
             <li className="flex items-center gap-2">
               <Star className="h-4 w-4 text-primary" aria-hidden="true" /> 5-star rated locally

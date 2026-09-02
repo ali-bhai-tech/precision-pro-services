@@ -5,7 +5,7 @@ let client;
 export function getSupabaseServerClient() {
   if (client) return client;
 
-  const url = process.env.SUPABASE_URL;
+  const url = process.env.SUPABASE_URL?.replace(/\/rest\/v1\/?$/, "");
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !serviceRoleKey) {
     throw new Error("Contact persistence is not configured");

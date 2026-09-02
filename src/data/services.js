@@ -79,7 +79,7 @@ export const services = [
       },
       {
         q: "Do you offer emergency no-heat service?",
-        a: "Yes — 24/7 emergency dispatch across our service area.",
+        a: "Please call during business hours to discuss urgent no-heat service.",
       },
     ],
   },
@@ -298,7 +298,7 @@ export const services = [
       },
       {
         q: "How fast can you respond?",
-        a: "Commercial refrigeration gets priority dispatch, 24/7.",
+        a: "Call during business hours so we can discuss the fastest available response.",
       },
     ],
   },

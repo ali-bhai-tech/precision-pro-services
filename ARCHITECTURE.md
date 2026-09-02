@@ -10,7 +10,7 @@ Precision Pro Services is a React 19 application built with Vite 8, TanStack Sta
 - `src/pages/`: page-level compositions. These components orchestrate sections and receive route-specific values without owning URL definitions.
 - `src/routes/`: TanStack file-based route definitions. Static routes define page metadata; category routes render shared category pages; `$slug` routes validate service slugs and render shared detail pages.
 - `src/data/`: local business, service, navigation, brand, testimonial, and site configuration data. Data modules contain no JSX.
-- `src/lib/`: framework-independent utilities and integration boundaries. `utils.ts` contains class-name composition; error modules support SSR/error reporting; `supabase.js` is currently a local placeholder data layer.
+- `src/lib/`: framework-independent utilities and integration boundaries. `utils.ts` contains class-name composition; error modules support SSR/error reporting; `contact.js` exposes the TanStack server-function boundary.
 - `src/assets/`: source images bundled by Vite.
 - `src/styles.css`: global Tailwind entry point and design tokens.
 - `src/router.tsx`: router factory and shared query context.
@@ -42,7 +42,7 @@ ContactForm UI
 
 TanStack Start's import protection requires the `createServerFn` export to be importable by the browser bundle; the handler body still executes on the server. The repository loads `src/server/contact/supabase.js`, which creates a server-only Supabase client from environment variables. Service-role credentials remain server-only.
 
-The database contract is recorded in `supabase/migrations/001_create_contact_requests.sql`. It enables Row Level Security without public policies; the server-side service-role client performs inserts while visitors receive no read, update, or delete access. The migration has not been applied or verified against the live project in this phase.
+The database contract is recorded in `supabase/migrations/001_create_contact_requests.sql`. The live `contact_requests` table and its expected columns were verified through the Supabase REST API. The migration enables Row Level Security without public policies; live policy inspection still requires an anonymous publishable key or authenticated Supabase management access.
 
 ## Environment Strategy
 

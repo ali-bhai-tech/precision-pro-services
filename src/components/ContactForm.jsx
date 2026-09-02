@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { submitContactRequest } from "../lib/contact";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { services } from "../data/services";
@@ -23,12 +23,13 @@ export function ContactForm() {
   const [values, setValues] = useState(empty);
   const [status, setStatus] = useState("idle");
   const [fieldErrors, setFieldErrors] = useState({});
+  const submittingRef = useRef(false);
 
   const set = (key) => (e) => setValues((v) => ({ ...v, [key]: e.target.value }));
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (status === "loading") return;
+    if (status === "loading" || submittingRef.current) return;
 
     const validation = contactRequestSchema.safeParse(values);
     if (!validation.success) {
@@ -41,6 +42,7 @@ export function ContactForm() {
     }
 
     setFieldErrors({});
+    submittingRef.current = true;
     setStatus("loading");
     try {
       const res = await submitContactRequest({ data: validation.data });
@@ -53,6 +55,7 @@ export function ContactForm() {
     } catch {
       setStatus("error");
     } finally {
+      submittingRef.current = false;
       setStatus((current) => (current === "loading" ? "error" : current));
     }
   };
@@ -118,7 +121,7 @@ export function ContactForm() {
             value={values.phone}
             onChange={set("phone")}
             className={`mt-2 ${field}`}
-            placeholder="(847) 555-0100"
+            placeholder="708 981 9065"
             aria-invalid={Boolean(errorFor("phone"))}
             aria-describedby={errorFor("phone") ? "phone-error" : undefined}
           />

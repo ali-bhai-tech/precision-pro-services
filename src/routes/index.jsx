@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 
 const title = "Northline Mechanical | HVAC, Refrigeration & Appliance Service";
 const description =
-  "Premium HVAC, refrigeration and high-end appliance service in Pingree Grove, IL. 15+ years experience, 24/7 emergency dispatch. Schedule service today.";
+  "Premium HVAC, refrigeration and high-end appliance service in Pingree Grove, IL. Schedule service during business hours.";
 
 export const Route = createFileRoute("/")({
   head: () => ({

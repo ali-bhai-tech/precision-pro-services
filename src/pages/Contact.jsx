@@ -45,10 +45,11 @@ export function Contact() {
 
           <div className="mt-5 rounded-xl border border-primary/25 bg-accent/50 p-6">
             <h3 className="flex items-center gap-2 font-display text-sm font-bold">
-              <Siren className="h-4 w-4 text-primary" aria-hidden="true" /> {siteConfig.emergency}
+              <Siren className="h-4 w-4 text-primary" aria-hidden="true" />{" "}
+              {siteConfig.availability}
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-accent-foreground/80">
-              No heat, no cooling or refrigeration failure? Call{" "}
+              Need service? Call during business hours at{" "}
               <a
                 href={siteConfig.phoneHref}
                 className="font-bold text-primary underline-offset-4 hover:underline"

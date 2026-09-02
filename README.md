@@ -498,7 +498,7 @@ Include:
 
 - customer-focused service
 
-- emergency support
+- service support during business hours
 
 Add CTA.
 
@@ -546,15 +546,15 @@ Store testimonials in testimonials.js.
 
 ==================================================
 
-15. EMERGENCY CTA
+15. SERVICE CTA
 
 ==================================================
 
 Create a strong section:
 
-"HVAC Emergency?
+"Need service?
 
-We're Ready When You Need Us."
+We're Ready To Help."
 
 Buttons:
 
@@ -562,7 +562,7 @@ Call Now
 
 Request Service
 
-Mention 24/7 Emergency Service.
+Mention the verified business hours.
 
 ==================================================
 
@@ -616,7 +616,7 @@ LEFT:
 
 - business hours
 
-- emergency service
+- business-hours service
 
 RIGHT:
 
@@ -994,9 +994,9 @@ Experience:
 
 15+ years
 
-Emergency:
+Business hours:
 
-24/7
+See the verified hours in the site configuration.
 
 Reference services:
 

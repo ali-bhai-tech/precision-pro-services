@@ -4,9 +4,9 @@ import { Reveal } from "./Reveal";
 import Button from "./Button";
 
 export function CTASection({
-  eyebrow = siteConfig.emergency,
-  title = "HVAC Emergency? We're Ready When You Need Us.",
-  text = "Heat out in January, cooler down at dinner service, refrigerator failing with a full load — call us and we'll dispatch a technician.",
+  eyebrow = siteConfig.availability,
+  title = "Need service? We're ready to help.",
+  text = "Heat out in January, cooler down at dinner service, refrigerator failing with a full load — call us during business hours or request an appointment online.",
 }) {
   return (
     <section className="bg-ink py-16 text-ink-foreground lg:py-20">

@@ -139,7 +139,7 @@ export function ServiceDetailPage({ categorySlug, slug }) {
                 ))}
               </ul>
               <div className="mt-6 rounded-lg bg-ink p-5 text-ink-foreground">
-                <p className="font-display text-sm font-bold">{siteConfig.emergency}</p>
+                <p className="font-display text-sm font-bold">{siteConfig.availability}</p>
                 <p className="mt-2 text-xs leading-relaxed text-ink-foreground/70">
                   Speak with a technician now.
                 </p>
@@ -181,7 +181,7 @@ export function ServiceDetailPage({ categorySlug, slug }) {
 
       <CTASection
         title={`Book ${service.title.toLowerCase()} with a certified technician`}
-        text="Request an appointment online or call now for emergency dispatch."
+        text="Request an appointment online or call during business hours to discuss your service needs."
       />
     </>
   );

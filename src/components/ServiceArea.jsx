@@ -14,7 +14,7 @@ export function ServiceArea() {
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
             Locally based and locally dispatched. Most service calls inside our coverage area are
-            scheduled same-day or next-day, with 24/7 availability for emergencies.
+            scheduled same-day or next-day, subject to availability during business hours.
           </p>
           <ul className="mt-7 flex flex-wrap gap-2">
             {siteConfig.areasServed.map((a) => (
@@ -38,7 +38,7 @@ export function ServiceArea() {
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
               <div>
                 <dt className="text-sm font-bold">Availability</dt>
-                <dd className="text-sm text-muted-foreground">{siteConfig.emergency}</dd>
+                <dd className="text-sm text-muted-foreground">{siteConfig.availability}</dd>
               </div>
             </div>
           </dl>
