@@ -17,14 +17,52 @@ const images = [
     src: hero,
     alt: "Technician servicing a high-efficiency furnace",
     span: "lg:col-span-2 lg:row-span-2",
+    width: 1600,
+    height: 1100,
   },
-  { src: hvac, alt: "Air conditioner condenser maintenance at a residence" },
-  { src: refrigeration, alt: "Commercial walk-in refrigeration installation" },
-  { src: process, alt: "Ductwork installation in a new home", span: "lg:col-span-2" },
-  { src: appliances, alt: "Luxury kitchen with high-end built-in appliances" },
-  { src: detail, alt: "Refrigerant manifold gauges during system charging" },
-  { src: thermostat, alt: "Smart thermostat installation in a living room" },
-  { src: wine, alt: "Built-in wine cooler in a custom cabinetry install" },
+  {
+    src: hvac,
+    alt: "Air conditioner condenser maintenance at a residence",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: refrigeration,
+    alt: "Commercial walk-in refrigeration installation",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: process,
+    alt: "Ductwork installation in a new home",
+    span: "lg:col-span-2",
+    width: 1600,
+    height: 1000,
+  },
+  {
+    src: appliances,
+    alt: "Luxury kitchen with high-end built-in appliances",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: detail,
+    alt: "Refrigerant manifold gauges during system charging",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: thermostat,
+    alt: "Smart thermostat installation in a living room",
+    width: 1200,
+    height: 900,
+  },
+  {
+    src: wine,
+    alt: "Built-in wine cooler in a custom cabinetry install",
+    width: 1200,
+    height: 900,
+  },
 ];
 
 export function Gallery() {
@@ -72,8 +110,8 @@ export function Gallery() {
                   src={img.src}
                   alt={img.alt}
                   loading="lazy"
-                  width={img.src === process ? 1600 : 1200}
-                  height={img.src === process ? 1000 : 900}
+                  width={img.width}
+                  height={img.height}
                   className="aspect-[4/3] h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06] lg:aspect-auto"
                 />
               </button>
