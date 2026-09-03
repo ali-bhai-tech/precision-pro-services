@@ -17,7 +17,7 @@ export function BrandGrid() {
             <p className="text-center text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">
               {group.label}
             </p>
-            <RevealGroup className="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-5">
+            <RevealGroup className="mt-5 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-border bg-border sm:grid-cols-3 lg:grid-cols-6">
               {group.items.map((brand) => (
                 <RevealItem
                   key={brand}
